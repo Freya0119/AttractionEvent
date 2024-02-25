@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/attractionListFragment">
+
+    <fragment
+        android:id="@+id/attractionListFragment"
+        android:name="com.example.attractions.fragment.AttractionListFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/attraction_list">
+        <action
+            android:id="@+id/action_mainFragment_to_attractionDetailFragment"
+            app:destination="@id/attractionDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/attractionDetailFragment"
+        android:name="com.example.attractions.fragment.AttractionDetailFragment"
+        android:label="AttractionDetailFragment"
+        tools:layout="@layout/attraction_detail_fragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_attractionDetailFragment_to_attractionWebViewFragment"
+            app:destination="@id/attractionWebViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/attractionWebViewFragment"
+        android:name="com.example.attractions.fragment.AttractionWebViewFragment"
+        android:label="AttractionWebViewFragment"
+        tools:layout="@layout/attraction_detail_web_view" />
+</navigation>
